@@ -1,10 +1,13 @@
 "use client";
 import React, { useState } from "react";
 import axios from "axios";
+import { loadStripe } from '@stripe/stripe-js';
+
 // import "./Payment.css";
 
 const Payment = () => {
   const [form, setForm] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
   const handleChange = (e) => {
     setForm((prev) => ({
       ...prev,
@@ -29,17 +32,16 @@ const Payment = () => {
   return (
     <div>
       <div className="p-4">
-        <h2>Amount</h2>
         <form className="m-4">
-          <input
-            type="text"
-            name="amount"
-            className="form-control"
-            onChange={handleChange}
-          />
-          <button className="btn btn-primary mt-4" onClick={onsubmit}>
-            Submit and continue
+          <button className="btn btn-primary mt-4" >
+         
           </button>
+          <div className="relative max-w-xs overflow-hidden bg-cover bg-no-repeat">
+  <img
+    src="https://assets-global.website-files.com/642eb7fb48d9b60d4759b72b/6544f5b63236c6a5ce77792d_open%20graph%20image.png"
+    className="mb-[20px] w-[250px] max-w-xs transition duration-300 ease-in-out hover:scale-110"
+    alt="Louvre" onClick={onsubmit} />
+</div>
         </form>
       </div>
     </div>

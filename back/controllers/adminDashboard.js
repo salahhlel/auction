@@ -77,7 +77,6 @@ module.exports.getProduct = async (req, res) => {
     res.status(500).json({ error: 'Internal Server Error', details: error.message });
   }
 };
-
 module.exports.getMembership = async (req, res) => { 
   try {
     const Mem = await Membership.findAll({
@@ -117,7 +116,6 @@ module.exports.getCord = (req, res) => {
       res.status(500).json({ error: 'Internal Server Error', details: error.message });
     });
 };
-
 module.exports.getAllPro = async (req, res) => { 
   try {
     const prr = await Item.findAll();
@@ -128,7 +126,6 @@ module.exports.getAllPro = async (req, res) => {
     res.status(500).json(err);
   }
 };
-
 module.exports.cantBid = async (req, res) => {
   try {
     const cl = await Client.findAll({
@@ -141,7 +138,7 @@ module.exports.cantBid = async (req, res) => {
           required: true
         }
       ],
-      raw: true 
+      
     });
 
     res.status(200).json(cl);

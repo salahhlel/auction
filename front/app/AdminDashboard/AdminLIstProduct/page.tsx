@@ -1,5 +1,6 @@
 "use client"
 import React, { useEffect, useState } from 'react'
+import Link from 'next/link';
 
 import dynamic from "next/dynamic";
 const SideBare = dynamic(() => import("../AdminSidebar/page"));
@@ -84,8 +85,9 @@ const remove= async (id)=>
     {data.map((el)=>
             (
 			<tr className="flex w-full mb-4">
-				<td className="p-4 w-1/4"> <img src={el.images[0]} alt="" /> </td>
-				<td className="p-4 w-1/4">{el.name}</td>
+				<td className="p-4 w-1/4"> <img src={el.images[0]} alt=""/>  </td>
+				<td className="p-4 w-1/4"><Link href="/AdminDashboard/adminShowProduct/"onClick={()=>{localStorage.setItem('sellerId',el.sellerId)
+      localStorage.setItem('description',el.description)  }} >{el.name}</Link></td>
 				<td className="p-4 w-1/4">{el.price}</td>
 				<td className="p-4 w-1/4"> {el.timeStart}</td>
         <td className="p-4 w-1/4">{el.timeEnd}</td>

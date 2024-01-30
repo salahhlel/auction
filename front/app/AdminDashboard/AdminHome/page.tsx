@@ -162,7 +162,7 @@ const HomePage = () => {
             setReclamation(Data);
            const reclamation1= Data.filter((item)=>{
             return new Date(item.createdAt).getFullYear()===new Date().getFullYear()})
-           const reclamtion2 = Data.filter((item2)=>{
+           const reclamtion2 = Data.filter((item2)=>{ 
             return new Date(item2.createdAt).getFullYear()===new Date().getFullYear()-1})
            setGraph(reclamation1)
            setGraph2(reclamtion2)
